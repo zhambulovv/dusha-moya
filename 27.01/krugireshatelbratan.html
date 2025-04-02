@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Площадь круга</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      width: 100px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Рассчитайте площадь круга</h1>
+    <label for="radius">Введите радиус:</label>
+    <input type="number" id="radius" placeholder="Радиус" min="0">
+    <button onclick="calculateArea()">Рассчитать площадь</button>
+    <div class="result" id="result"></div>
+  </div>
+
+  <script>
+    function calculateArea() {
+      const radius = parseFloat(document.getElementById('radius').value);
+      if (isNaN(radius) || radius <= 0) {
+        document.getElementById('result').innerText = 'Пожалуйста, введите правильный радиус.';
+      } else {
+        const area = Math.PI * Math.pow(radius, 2);
+        document.getElementById('result').innerText = `Площадь круга: ${area.toFixed(2)}`;
+      }
+    }
+  </script>
+</body>
+</html>

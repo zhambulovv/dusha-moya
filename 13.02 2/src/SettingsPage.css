@@ -1,0 +1,21 @@
+.settings-page {
+    padding: 20px;
+    color: #0f0;
+    background-color: #000;
+  }
+  
+  .setting-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .save-btn {
+    background-color: #0f0;
+    color: #000;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математическая операция</title>
+</head>
+<body>
+    <h2>Выполнить операцию</h2>
+    <label for="num1">Число 1:</label>
+    <input type="number" id="num1">
+    <br><br>
+    <label for="num2">Число 2:</label>
+    <input type="number" id="num2">
+    <br><br>
+    <button onclick="calculate()">Вычислить</button>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            const num1 = parseInt(document.getElementById('num1').value);
+            const num2 = parseInt(document.getElementById('num2').value);
+            let result = "";
+
+            if (num1 === 0 || num2 === 0) {
+                result = "Операция невозможна";
+            } else if (num1 % 2 === 0 && num2 % 2 === 0) {
+                result = num1 + num2;
+            } else {
+                result = num1 - num2;
+            }
+
+            document.getElementById('result').textContent = "Результат: " + result;
+        }
+    </script>
+</body>
+</html>

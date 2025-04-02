@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача с рисом</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Задача с рисом</h1>
+        <button onclick="calculateWeighings()">Вычислить минимальное количество взвешиваний для 1 кг</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateWeighings() {
+            const targetAmount = 1000;
+            let weighings = 0;
+            let amountMeasured = 0;
+
+            while (amountMeasured < targetAmount) {
+                amountMeasured += Math.pow(2, weighings);
+                weighings++;
+            }
+
+            document.getElementById('result').innerText = `Минимальное количество взвешиваний: ${weighings}`;
+        }
+    </script>
+</body>
+</html>
